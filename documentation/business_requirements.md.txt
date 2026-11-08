@@ -1,0 +1,43 @@
+# E-Commerce Business Intelligence Project
+
+## 1. Project Overview
+
+This project analyzes the Brazilian E-Commerce
+Public Dataset by Olist.
+
+The objective is to develop an interactive
+business intelligence solution using Tableau
+to analyze sales, customers, products and
+logistics performance.
+
+## 2. Business Objectives
+
+- Understand sales performance.
+- Identify high-performing products.
+- Analyze customer purchasing behaviour.
+- Evaluate delivery performance.
+- Understand customer satisfaction.
+- Provide actionable business recommendations.
+
+## 3. Target Stakeholders
+
+- Head of Sales
+- Marketing Manager
+- Operations Manager
+- Business Management Team
+
+## 4. Technology Stack
+
+- Tableau Public
+- PostgreSQL
+- SQL
+- Git
+- GitHub
+
+## 5. Expected Deliverables
+
+- Data quality assessment
+- SQL analytical views
+- Four interactive Tableau dashboards
+- Business insights and recommendations
+- GitHub project repository

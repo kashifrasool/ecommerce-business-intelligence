@@ -1,0 +1,175 @@
+# Data Dictionary
+
+## 1. Customers Dataset
+
+Grain: One customer record associated with an order.
+
+Primary Key: customer_id
+
+Business Entity Identifier: customer_unique_id
+
+Important distinction:
+customer_id identifies the customer record,
+while customer_unique_id identifies the actual
+customer across multiple orders.
+
+Use customer_unique_id for repeat customer analysis.
+
+Purpose:
+Analyze customer geography and purchasing behaviour.
+
+## 2. ## Orders Dataset
+
+File: olist_orders_dataset.csv
+
+Grain: One row per order.
+
+Primary Key: order_id
+
+Foreign Key: customer_id
+
+Columns:
+- order_id
+- customer_id
+- order_status
+- order_purchase_timestamp
+- order_approved_at
+- order_delivered_carrier_date
+- order_delivered_customer_date
+- order_estimated_delivery_date
+
+Purpose:
+Analyze order volume, sales trends,
+order status and delivery performance.
+
+## 3. ## Order Items Dataset
+
+File: olist_order_items_dataset.csv
+
+Grain: One row per product line within an order.
+
+Composite Key:
+order_id + order_item_id
+
+Foreign Keys:
+- order_id
+- product_id
+- seller_id
+
+Columns:
+- order_id
+- order_item_id
+- product_id
+- seller_id
+- shipping_limit_date
+- price
+- freight_value
+
+Purpose:
+Analyze merchandise revenue,
+freight charges and product performance.
+
+## 4. Payments Dataset
+
+File: olist_order_payments_dataset.csv
+
+Grain: One payment record.
+
+Composite Key:
+order_id + payment_sequential
+
+Important Columns:
+- payment_type
+- payment_installments
+- payment_value
+
+Purpose:
+Analyze payment methods and payment values.
+
+## 5. Reviews Dataset
+
+File: olist_order_reviews_dataset.csv
+
+Grain: One review record.
+
+Primary Key: review_id
+
+Important Columns:
+- review_id
+- order_id
+- review_score
+- review_comment_title
+- review_comment_message
+
+Purpose:
+Analyze customer satisfaction.
+
+## 6. Products Dataset
+
+File: olist_products_dataset.csv
+
+Grain: One product.
+
+Primary Key: product_id
+
+Important Columns:
+- product_id
+- product_category_name
+- product_weight_g
+- product_length_cm
+- product_height_cm
+- product_width_cm
+
+Purpose:
+Analyze product categories and product characteristics.
+
+## 7. Sellers Dataset
+
+File: olist_sellers_dataset.csv
+
+Grain: One seller.
+
+Primary Key: seller_id
+
+Important Columns:
+- seller_id
+- seller_zip_code_prefix
+- seller_city
+- seller_state
+
+Purpose:
+Analyze seller geography and performance.
+
+## 8. Geolocation Dataset
+
+File: olist_geolocation_dataset.csv
+
+Grain: One geographic record.
+
+Important Columns:
+- geolocation_zip_code_prefix
+- geolocation_lat
+- geolocation_lng
+- geolocation_city
+- geolocation_state
+
+Purpose:
+Support geographic analysis.
+
+Important:
+Postal code prefixes are not necessarily unique.
+
+## 9. Category Translation Dataset
+
+File: product_category_name_translation.csv
+
+Grain: One category translation.
+
+Key: product_category_name
+
+Important Columns:
+- product_category_name
+- product_category_name_english
+
+Purpose:
+Translate Portuguese product categories into English.
